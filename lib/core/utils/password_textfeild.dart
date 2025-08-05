@@ -1,7 +1,6 @@
 import 'package:agri_tonaton/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-
 class PasswordField extends StatefulWidget {
   final Key? fieldKey;
   final String? hintText, labelText, validateMsg;
@@ -32,19 +31,25 @@ class PasswordField extends StatefulWidget {
     this.showBorderRound = true,
     this.borderColor = WHITE,
     this.height = 15,
-    required Null Function() onTap,
-     onEditingComplete,
+    required Null Function() onTap, // Optional - remove if unused
+    onEditingComplete, // Optional - remove if unused
   });
 
   @override
-  // ignore: library_private_types_in_public_api
   _PasswordFieldState createState() => _PasswordFieldState();
 }
 
 class _PasswordFieldState extends State<PasswordField> {
   bool _obscureText = true;
+
   @override
   Widget build(BuildContext context) {
+    final borderRadius = BorderRadius.circular(widget.borderRadius ?? 4);
+    final borderSide = BorderSide(
+      color: widget.borderColor ?? WHITE,
+      width: widget.borderWidth ?? 0.1,
+    );
+
     return TextFormField(
       keyboardType: TextInputType.text,
       key: widget.fieldKey,
@@ -52,7 +57,7 @@ class _PasswordFieldState extends State<PasswordField> {
       onSaved: widget.onSaved,
       focusNode: widget.focusNode,
       validator: (value) {
-        if (value!.isEmpty && widget.validate!) {
+        if ((value == null || value.isEmpty) && widget.validate!) {
           return widget.validateMsg;
         }
         return null;
@@ -63,44 +68,39 @@ class _PasswordFieldState extends State<PasswordField> {
       decoration: InputDecoration(
         hintText: widget.hintText,
         hintStyle: const TextStyle(
-            color: TEXTFIELD, fontSize: 13, fontWeight: FontWeight.normal),
+          color: TEXTFIELD,
+          fontSize: 13,
+          fontWeight: FontWeight.normal,
+        ),
         labelText: widget.labelText,
-        contentPadding: widget.height == null
-            ? const EdgeInsets.symmetric(vertical: 10, horizontal: 10)
-            : EdgeInsets.symmetric(vertical: widget.height!, horizontal: 10),
+        labelStyle: const TextStyle(color: BLACK),
         filled: true,
         fillColor: WHITE,
-        labelStyle: const TextStyle(color: BLACK),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: widget.height ?? 15,
+          horizontal: 10,
+        ),
         prefixIcon: widget.prefixIcon == null
             ? null
             : Icon(widget.prefixIcon, color: WHITE),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadius!),
-          borderSide: BorderSide(
-            color: widget.borderColor!,
-            width: widget.borderWidth!,
-          ),
+          borderRadius: borderRadius,
+          borderSide: borderSide,
         ),
         disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadius!),
-          borderSide: BorderSide(
-            color: widget.borderColor!,
-            width: widget.borderWidth!,
-          ),
+          borderRadius: borderRadius,
+          borderSide: borderSide,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadius!),
+          borderRadius: borderRadius,
           borderSide: BorderSide(
             color: WHITE,
-            width: widget.borderWidth!,
+            width: widget.borderWidth ?? 0.1,
           ),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadius!),
-          borderSide: BorderSide(
-            color: widget.borderColor!,
-            width: widget.borderWidth!,
-          ),
+          borderRadius: borderRadius,
+          borderSide: borderSide,
         ),
         suffixIcon: GestureDetector(
           onTap: () {

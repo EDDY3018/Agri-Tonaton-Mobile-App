@@ -35,10 +35,10 @@ class _NoInternetScreenState extends State<NoInternetScreen>
               curve: Curves.easeOut,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.wifi_off, size: 80, color: Colors.redAccent),
-                  SizedBox(height: 20),
-                  Text(
+                children: [
+                  const Icon(Icons.wifi_off, size: 80, color: Colors.redAccent),
+                  const SizedBox(height: 20),
+                  const Text(
                     "No Internet Connection",
                     style: TextStyle(
                       fontSize: 22,
@@ -46,11 +46,27 @@ class _NoInternetScreenState extends State<NoInternetScreen>
                       color: Colors.black87,
                     ),
                   ),
-                  SizedBox(height: 12),
-                  Text(
+                  const SizedBox(height: 12),
+                  const Text(
                     "Please connect to the internet and try again.",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 16, color: Colors.grey),
+                  ),
+                  const SizedBox(height: 30),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() => _visible = false);
+                      Future.delayed(const Duration(milliseconds: 300), () {
+                        setState(() => _visible = true);
+                      });
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.redAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: const Text("Retry"),
                   ),
                 ],
               ),
@@ -61,4 +77,3 @@ class _NoInternetScreenState extends State<NoInternetScreen>
     );
   }
 }
-

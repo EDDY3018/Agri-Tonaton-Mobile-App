@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "699085319375",
+    "project_id": "agri-tonaton",
+    "storage_bucket": "agri-tonaton.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699085319375:android:a4f578578e128d3e46dbba",
+        "android_client_info": {
+          "package_name": "com.tufftec.agri_tonaton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDQFT17L2bfbsGcleWOG-ETQAAPZuxwyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699085319375:android:2007f5659b31fd3546dbba",
+        "android_client_info": {
+          "package_name": "com.tufftec.agri_tonaton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDQFT17L2bfbsGcleWOG-ETQAAPZuxwyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

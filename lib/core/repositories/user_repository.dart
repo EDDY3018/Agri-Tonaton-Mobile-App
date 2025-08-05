@@ -6,10 +6,13 @@ import 'package:flutter/material.dart';
 
 class UserRepository extends ChangeNotifier {
   final _db = FirebaseDatabase.instance.ref();
+  String _sanitizeKey(String email) => email.replaceAll('.', '_').replaceAll('@', '_');
 
-  Future<void> createUser(UserModel user) async {
-    await _db.child('users').child(user.email).set(user.toJson());
-  }
+
+Future<void> createUser(UserModel user) async {
+  final sanitizedEmail = _sanitizeKey(user.email);
+  await _db.child('users').child(sanitizedEmail).set(user.toJson());
+}
 
   Future<UserModel?> getUser(String email) async {
     final snapshot = await _db.child('users').child(email).get();

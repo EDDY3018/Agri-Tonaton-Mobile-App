@@ -4,8 +4,6 @@ import 'package:agri_tonaton/core/utils/app_colors.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart' as google;
 
-
-
 TextStyle BUTTON = google.GoogleFonts.inter(
   textStyle: const TextStyle(
     fontSize: 17,
@@ -88,8 +86,8 @@ TextStyle PERSONAL = google.GoogleFonts.inter(
 );
 TextStyle CONTAINEERTEXT = google.GoogleFonts.inter(
   textStyle: const TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.w900,
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
     color: WHITE,
   ),
 );
@@ -236,7 +234,6 @@ TextStyle OVERVIEW = google.GoogleFonts.inter(
   ),
 );
 TextStyle HOTELname = google.GoogleFonts.inter(
-  
   textStyle: const TextStyle(
     fontSize: 13,
     fontWeight: FontWeight.w900,
@@ -244,7 +241,6 @@ TextStyle HOTELname = google.GoogleFonts.inter(
   ),
 );
 TextStyle DOORHINT = google.GoogleFonts.inter(
-  
   textStyle: const TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w500,
