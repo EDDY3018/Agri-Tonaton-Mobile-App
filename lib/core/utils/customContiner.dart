@@ -32,6 +32,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           label,
           style: CONTAINEERTEXT.copyWith(
+            fontSize: 13,
             color: textColor ?? Colors.white, // 👈 dynamic text color
           ),
         ),

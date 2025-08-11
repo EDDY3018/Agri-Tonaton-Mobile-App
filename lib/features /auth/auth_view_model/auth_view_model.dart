@@ -11,7 +11,7 @@ class AuthViewModel extends ChangeNotifier {
   final LocalStorageService _localStorage = LocalStorageService();
   bool isLoading = false;
   String? error;
-
+User? get currentUser => FirebaseAuth.instance.currentUser;
   AuthViewModel(this._authService, this._userRepo);
 
   /// Format Firebase errors into friendly text

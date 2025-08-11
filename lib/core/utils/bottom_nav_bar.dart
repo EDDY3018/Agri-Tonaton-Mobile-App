@@ -21,46 +21,46 @@ class BTNAV extends StatelessWidget {
         PersistentTabConfig(
           screen: Home(),
           item: ItemConfig(
-            icon: Icon(Icons.tips_and_updates, color: BLACK),
-            title: "Home",
+            icon: Icon(Icons.home_filled, color: PRIMARY),
+            title: "",
             activeForegroundColor: WHITE,
-            inactiveForegroundColor: BLACK,
+            inactiveForegroundColor: PRIMARY,
           ),
         ),
         PersistentTabConfig(
           screen: Contacts(),
           item: ItemConfig(
-            icon: Icon(Icons.monitor_heart_sharp, color: BLACK),
-            title: "Contacts",
+            icon: Icon(Icons.menu_outlined, color: PRIMARY),
+            title: "",
             activeForegroundColor: WHITE,
-            inactiveForegroundColor: BLACK,
+            inactiveForegroundColor: PRIMARY,
           ),
         ),
         PersistentTabConfig(
           screen: Camera(),
           item: ItemConfig(
-            icon: Icon(Icons.camera_alt, color: BLACK),
-            title: "Camera",
+            icon: Icon(Icons.camera_alt, color: PRIMARY),
+            title: "",
             activeForegroundColor: WHITE,
-            inactiveForegroundColor: BLACK,
+            inactiveForegroundColor: PRIMARY,
           ),
         ),
         PersistentTabConfig(
           screen: Product(),
           item: ItemConfig(
-            icon: Icon(Icons.shopping_cart, color: BLACK),
-            title: "Products",
+            icon: Icon(Icons.shopping_cart, color: PRIMARY),
+            title: "",
             activeForegroundColor: WHITE,
-            inactiveForegroundColor: BLACK,
+            inactiveForegroundColor: PRIMARY,
           ),
         ),
         PersistentTabConfig(
           screen: Profile(),
           item: ItemConfig(
-            icon: Icon(Icons.person, color: BLACK),
-            title: "Profile",
+            icon: Icon(Icons.person, color: PRIMARY),
+            title: "",
             activeForegroundColor: WHITE,
-            inactiveForegroundColor: BLACK,
+            inactiveForegroundColor: PRIMARY,
           ),
         ),
       ],
@@ -68,7 +68,11 @@ class BTNAV extends StatelessWidget {
         navBarConfig: navBarConfig,
 
         navBarDecoration: NavBarDecoration(
-          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: PRIMARY),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(8),
+            topRight: Radius.circular(8),
+          ),
           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8)],
         ),
       ),

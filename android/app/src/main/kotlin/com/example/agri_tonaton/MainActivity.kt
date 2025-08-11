@@ -1,4 +1,5 @@
-package com.example.agri_tonaton
+package com.tufftec.agri_tonaton
+
 
 import io.flutter.embedding.android.FlutterActivity
 
